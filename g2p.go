@@ -3,6 +3,8 @@ package main
 import (
 	"flag"
 	"github.com/google/go-github/github"
+	"log"
+	"oauth2"
 )
 
 func main() {
@@ -19,9 +21,9 @@ func main() {
 
 	// list all repositories for the authenticated user
 	repos, _, err := client.Repositories.List("", nil)
-	fmt.Printf("Authorized users repos: %+v\n\n", repos)
+	log.Printf("Authorized users repos: %+v\n\n", repos)
 	orgs, _, err := client.Organizations.List("", nil)
-	fmt.Printf("Authorized users orgs: %+v\n\n", orgs)
+	log.Printf("Authorized users orgs: %+v\n\n", orgs)
 
 }
 
